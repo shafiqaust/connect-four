@@ -1,0 +1,229 @@
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+header{
+    
+    font-size: 20px;
+    width: 30%;
+    padding:10px;
+    margin: 0 auto;
+    transition: all .3s ease-in-out 0s;
+    text-align: center;
+    color: white;
+    background: #33264f
+}
+
+body {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: #F7F9E0;
+}
+
+
+table {
+    
+    width: 404px;
+    height: 346px;
+    transition: all .3s ease-in-out 0s;
+    margin:0 auto;
+    background: #33264f;
+    border-collapse: separate;
+    border-spacing: 2px 5px;
+    border-radius: 0px 0px 10px 10px;
+    padding: 10px;
+}
+
+td {
+    cursor: pointer;
+    background: rgb(245, 245, 245);
+    transition: all .25s ease-in-out 0s;
+    border-radius: 30px;
+    
+}
+
+input[type='text'], h1 {
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 15px;
+    transition: opacity .25s ease-in-out 0s;
+    font-weight: normal;
+    cursor: default;
+    margin:0 auto;
+    border: 2px solid black;
+}
+
+
+#player-name {
+    color: rgb(70, 70, 70);
+    font-size: 18px;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+    cursor: text;
+    outline: none;
+    display: block;
+    transition: all .2s ease-in-out 0s;
+}
+
+#info {
+    left: 0;
+    background: #33264f;
+    opacity: 0;
+    width: 100%;
+    font-size: 5vh;
+    top: 50vh;
+    transform: translateY(-50%);
+    color: white;
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh;
+    position: absolute;
+    display: none;
+    letter-spacing: 1px;
+    transition: all .25s ease-in-out 0s;
+}
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 20px auto 0 auto;
+    display: block;
+    border-radius: 2vh;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    transition: all .1s ease-in-out 0s;
+    box-shadow: 0px 0px 25px 0px rgba(176,176,176,0.19);
+    background: lightskyblue;
+}
+
+button:active{
+    box-shadow: 0px 0px 0px 0px rgba(176,176,176,0.19);
+    transform: scale(.95);
+}
+#room-to-join{
+    width: 30%;
+    color:#000;
+    margin:0 auto 10px auto;
+    font-size: 18px;
+    text-align: center;
+}
+#room-to-join a,#room-to-join a:hover{
+    text-decoration: underline;
+    color:#000;
+    font-weight: bold;
+}
+.cellBlue {
+    background: #4fc3dc;
+}
+
+.cellRed {
+    background: #FF5F63;
+}
+
+.cellBlueHover {
+    background: rgba(41, 210, 228, .15);
+}
+
+.cellRedHover {
+    background: rgba(247, 56, 89, .15);
+}
+
+.cellError{
+   background:blue;
+}
+
+.animate {
+    transform: scale(1.05);
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+::selection {
+    background: rgb(50, 50, 50);
+    color: white;
+}
+::-moz-selection {
+    background: rgb(50, 50, 50);
+    color: white;
+}
+#game-piece{
+    background: #33264f;
+    width: 385px;
+    margin: 0 auto;
+    padding: 10px; 
+    overflow: hidden;
+    border-bottom: 2px solid #FFF;
+    border-radius: 10px 10px 0px 0px;
+}
+#game-piece div{
+    background: white;
+    height: 55px;
+    width: 55px;
+    border-radius: 30px;
+    float: left;
+    font-size: 0;
+    /*margin:1.5px 0 1.5px 1px;*/
+}
+.red-fall {
+  animation-name: fall-animation;
+  animation-duration: 550ms;
+  background-color: #FF5F63;
+}
+.blue-fall {
+  animation-name: fall-animation;
+  animation-duration: 550ms;
+  background-color: #4fc3dc;
+}
+@keyframes fall-animation {
+  from {
+    transform: translateY(-350px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.bubbles{
+    position: relative;
+    display: flex;
+}
+
+.bubbles span{ 
+    width: 30px;
+    height: 30px;
+    background: #4fc3dc;
+    margin:0 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+
+.bubbles span:nth-child(even){ 
+    background: #FF5F63;
+    box-shadow: 0 0 0 10px #ff2d7544, 0 0 50px #ff2d75, 0 0 100px #ff2d75;
+}
+
+@keyframes animate{
+    0% { transform: translateY(100vh) scale(0); }
+    100% { transform: translateY(-10vh) scale(1); }
+}
+.flash-bg{
+
+    animation: blinkingBg 4s;
+}
+@keyframes blinkingBg{
+    0% { background-color: #4fc3dc44; }
+    50% { background-color: yellow; }
+    100% { background-color: #FF5F63; }
+}

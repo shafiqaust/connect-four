@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <title>Connect Four</title>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+        <meta name="description" content="A Multiplayer Game.">
+        <meta name="author" content="Shafiq Zaman">
+        <link  rel="stylesheet"  href="/css/style.css">
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="/js/client.js"></script>
+        
+    </head>
+
+  
+
+<body onload="Initialize(); Message('Press on the play button')">
+    <div id="room"></div>
+    
+    <div class="noselect">
+        <div id="bubbles" class="bubbles">
+                <span style="--i:11"></span>
+                <span style="--i:12"></span>
+                <span style="--i:21"></span>
+                <span style="--i:19"></span>
+                <span style="--i:20"></span>
+                <span style="--i:29"></span>
+        </div>
+        <header id="colorPlay">Connect Four</header>
+        <input type="text" maxlength="15" id="player-name" value="" onchange="NameUpdate()" onkeydown="NameUpdate()" onkeypress="NameUpdate()" onpaste="NameUpdate()" oninput="NameUpdate()" placeholder="Type Player Name"  />
+        <div id="room-to-join"></div>
+        <div id="game-piece">
+            <div id="piece-0"></div>
+            <div id="piece-1"></div>
+            <div id="piece-2"></div>
+            <div id="piece-3"></div>
+            <div id="piece-4"></div>
+            <div id="piece-5"></div>
+            <div id="piece-6"></div>
+        </div>
+        <table id="grid"></table>
+        <h1 id="info"></h1>
+        <button onclick="Play()" id="play">Play</button>
+
+    </div>
+</body>
+</html>
